@@ -1,131 +1,75 @@
 <div class="main">
-  <div class="">
-    <div class="container animate">
-      <div class="">
-        <!--Card content-->
-        <div class="card-body d-sm-flex justify-content-between">
-          <h3 class="mb-2 mb-sm-0 pt-1">
-            <a [routerLink]="['/dashboard']">Quay lại</a>
-            <span> / </span>
-            <span>Nạp tài khoản chính</span>
-          </h3>
-        </div>
+  <div class="container animate">
+    <div class="card">
+      <!--Card content-->
+      <div class="card-body d-sm-flex justify-content-between">
+        <h3 class="mb-2 mb-sm-0 pt-1">
+          <a [routerLink]="['/dashboard']">Quay lại</a>
+          <span> / </span>
+          <span>Lịch sử giao dịch</span>
+        </h3>
       </div>
-      <div class="" uk-grid="">
-        <div class="">
-          <form>
-            <div class="form-group">
+    </div>
+    <div class="card">
+      <div class="px-lg-5 pt-0">
+        <form class="border border-light pt-2">
+          <div class="form-group">
+            <div class="col">
               <label class="">Loại thẻ</label>
-              <div class="col-sm-10">
-                <div class="">
-                  <label
-                    class=""
-                    [ngStyle]="{
-                      'background-color':
-                        tkcTransferModel.typeCard == 1 ? 'red' : '#fff'
-                    }"
-                  >
-                    <img src="../../../assets/images/vt.png" />
-                    <span
-                      class=""
-                      bind="tyLeMuaThe_vt"
-                      bind2="theVT"
-                      *ngIf="rateTkc.enableVt === 0"
-                    ></span>
-                    <span class="">Bảo trì</span>
-                  </label>
-                  <label
-                    class=""
-                    data-v="mb"
-                    [ngStyle]="{
-                      'background-color':
-                        tkcTransferModel.typeCard == 2 ? 'red' : '#fff'
-                    }"
-                  >
-                    <img src="../../../assets/images/mb.png" />
-                    <span
-                      class=""
-                      bind="tyLeMuaThe_mb"
-                      bind2="theMB"
-                      *ngIf="rateTkc.enableMb === 0"
-                    ></span>
-                    <span class="">Bảo trì</span>
-                  </label>
-                  <label
-                    class=""
-                    data-v="vn"
-                    [ngStyle]="{
-                      'background-color':
-                        tkcTransferModel.typeCard == 3 ? 'red' : '#fff'
-                    }"
-                  >
-                    <img src="../../../assets/images/vn.png" />
-                    <span class="" *ngIf="rateTkc.enableVn === 0"></span>
-                    <span class="">Bảo trì</span>
-                  </label>
-                </div>
-                <select class="" fname="cardType" id="cmbCardType">
-                  <option selected="selected" disabled="disabled"
-                    >Chọn loại thẻ...</option
-                  >
-                  <option value="vt">Viettel</option>
-                  <option value="mb">Mobifone</option>
-                  <option value="vn">Vinaphone</option>
-                </select>
+              <div class="">
+                <label class="">
+                  <img />
+                  <span class="" bind="tyLeMuaThe_vt" bind2="theVT"></span>
+                  <span class="">Bảo trì</span>
+                </label>
+                <label class="">
+                  <img />
+                  <span class="" bind="tyLeMuaThe_mb" bind2="theMB"></span>
+                  <span class="">Bảo trì</span>
+                </label>
+                <label class="">
+                  <img />
+                  <span class="" *ngIf="rateTkc.enableVn === 0"></span>
+                  <span class="">Bảo trì</span>
+                </label>
               </div>
+              <label>Subject</label>
+              <select class="mdb-select select-dropdown form-control" fname="cardType" id="cmbCardType">
+                <option value="" disabled>Choose option</option>
+                <option value="vt">Feedback</option>
+                <option value="mb">Mobifone</option>
+                <option value="vn">Vinaphone</option>
+              </select>
             </div>
-            <div class="form-group">
-              <label for="cmbMenhGia" class="">Số tiền</label>
-              <div uk-grid="" class="">
-                <div class="">
-                  <input
-                    type="number"
-                    class=""
-                    id="cmbMenhGia"
-                    placeholder="Số tiền nạp"
-                    name="amount"
-                  />
-                </div>
-                <div class="">
-                  <input
-                    type="text"
-                    class=""
-                    readonly="readonly"
-                    name="realMoney"
-                    placeholder="Số tiền cần để mua"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="form-group ">
-              <label for="inputPassword3 " class="">Số ĐT</label>
-              <div class="col-sm-10 ">
-                <input
-                  type="text "
-                  class=""
-                  fname="phoneNum"
-                  name="phone"
-                  placeholder="Số điện thoại sẽ nạp tiền "
-                />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class=""></label>
-              <div class="col-sm-10 ">
-                <button type="button" class="">Thực hiện</button>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="">
-          <div uk-alert=" " class="">
-            <h3 style="color: #faa05a; ">Chú ý</h3>
-            <hr style="border-color: #faa05a; " />
-            <p>CHỈ NẠP ĐƯỢC CHO THUÊ BAO TRẢ TRƯỚC</p>
-            <p>Khi ấn xác nhận sẽ không thể hủy giao dịch được.</p>
           </div>
-        </div>
+          <div class="form-row-config col-conf mb-4">
+            <div class="col">
+              <label>Số tiền</label>
+              <input type="number" id="cmbMenhGia" class="form-control" placeholder="Số tiền nạp" name="amount">
+            </div>
+            <div class="col">
+              <label>&nbsp;</label>
+              <input type="text" readonly="readonly" name="realMoney" class="form-control"
+                placeholder="Số tiền cần để mua">
+            </div>
+          </div>
+          <div class="form-group ">
+            <div class="col">
+              <label for="inputPassword3 " class="">Số ĐT</label>
+              <input type="text " class="form-control" fname="phoneNum" name="phone"
+                placeholder="Số điện thoại sẽ nạp tiền " />
+            </div>
+          </div>
+          <div class="form-group col">
+            <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+          </div>
+        </form>
+      </div>
+      <div class="col">
+        <h3>Chú ý</h3>
+        <hr />
+        <p>CHỈ NẠP ĐƯỢC CHO THUÊ BAO TRẢ TRƯỚC</p>
+        <p>Khi ấn xác nhận sẽ không thể hủy giao dịch được.</p>
       </div>
     </div>
   </div>

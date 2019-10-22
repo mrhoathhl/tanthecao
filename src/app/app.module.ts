@@ -13,6 +13,8 @@ import { CreatePartnerComponent } from './components/users/create-partner/create
 import { DetailUserComponent } from './components/users/detail-user/detail-user.component';
 import { ManagerUserComponent } from './components/users/manager-user/manager-user.component';
 import { RegisterComponent } from './components/register/register.component';
+import { HomeComponent } from './components/users/home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { RegisterComponent } from './components/register/register.component';
     CreatePartnerComponent,
     DetailUserComponent,
     ManagerUserComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

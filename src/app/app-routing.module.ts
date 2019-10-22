@@ -5,9 +5,13 @@ import { FooterComponent } from './components/common-layout/footer/footer.compon
 import { HeaderComponent } from './components/common-layout/header/header.component';
 import { RegisterComponent } from './components/register/register.component';
 import { TransferMoneyComponent } from './components/users/transfer-money/transfer-money.component';
+import { HomeComponent } from './components/users/home/home.component';
+import { HistoryComponent } from './components/users/history/history.component';
 
 
 const routes: Routes = [
+  { path: "home", component: HomeComponent },
+  { path: "home", redirectTo: 'home' },
   { path: "login", component: LoginComponent },
   { path: "login", redirectTo: 'login' },
   { path: "footer", component: FooterComponent },
@@ -18,6 +22,8 @@ const routes: Routes = [
   { path: "register", redirectTo: 'register' },
   { path: "transfer", component: TransferMoneyComponent },
   { path: "transfer", redirectTo: 'transfer' },
+  { path: "history", component: HistoryComponent },
+  { path: "history", redirectTo: 'history' },
 ];
 
 @NgModule({
